@@ -66,7 +66,7 @@ const NavBar = () => {
     >
       <div>logo</div>
       <div>
-        <div className="flex flex-col sm:flex-row sm:gap-10">
+        <div className="flex flex-col sm:flex-row sm:gap-10 items-center justify-center">
           {routes.map((route, key) => {
             return route.visibility === "viewer" ? (
               <div
@@ -78,11 +78,14 @@ const NavBar = () => {
               </div>
             ) : null;
           })}
-          <div>
+          <div className="flex justify-center items-center">
             {theme?.dark ? (
-              <MdOutlineLightMode className={`w-[20px] h-[20px]`} />
+              <MdOutlineLightMode className={`w-[30px] h-[30px]`} />
             ) : (
-              <MdOutlineDarkMode className={`w-[20px] h-[20px]`} />
+              <MdOutlineDarkMode
+                className={`w-[30px] h-[30px] bg-gray-300`}
+                color={`rgb(62,73,88)`}
+              />
             )}
           </div>
         </div>
