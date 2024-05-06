@@ -5,7 +5,7 @@ import React from "react";
 
 const ContextProvider = ({ children }: { children: React.ReactNode }) => {
   return (
-    <ThemeContext.Provider value={{ dark: false }}>
+    <ThemeContext.Provider value={{ dark: true }}>
       {children}
     </ThemeContext.Provider>
   );
