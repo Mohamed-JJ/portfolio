@@ -52,14 +52,17 @@ const NavBar = () => {
   ];
 
   return (
-    <div className="flex flex-row justify-between items-center w-full h-[15%] px-8 border-black border">
-      {routes.map((route, key) => {
-        return (
-          <div key={key} onClick={() => HandleClick(router, route.path)}>
-            {route.name}
-          </div>
-        );
-      })}
+	  <div className="flex flex-row justify-between items-center w-full h-[15%] px-8 border-black border">
+		  <div>logo</div>
+      <div className="flex flex-row gap-10">
+        {routes.map((route, key) => {
+          return route.visibility === "viewer" ? (
+            <div key={key} onClick={() => HandleClick(router, route.path)}>
+              {route.name}
+            </div>
+          ) : null;
+        })}
+      </div>
     </div>
   );
 };
