@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import QueryComponent from "@/components/queryProvider/QueryProvider";
+import { AuroraBackgroundDemo } from "@/components/background/rootBackground";
+import ContextProvider from "@/components/contextProvider/themeProvider";
+import NavBar from "@/components/navBar/navBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +20,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <QueryComponent>
-        <body className={inter.className}>{children}</body>
-      </QueryComponent>
+      <ContextProvider>
+        <QueryComponent>
+          <body className={inter.className + " overflow-hidden"}>
+            <AuroraBackgroundDemo>
+              <NavBar/>
+              {children}
+            </AuroraBackgroundDemo>
+          </body>
+        </QueryComponent>
+      </ContextProvider>
     </html>
   );
 }
