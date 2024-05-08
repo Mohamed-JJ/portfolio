@@ -11,6 +11,7 @@ import { IoIosMenu } from "react-icons/io";
 import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import { link } from "fs";
+import { FaXmark } from "react-icons/fa6";
 
 const CheckIfAdmin = async () => {
   return await false;
@@ -71,7 +72,7 @@ const NavBar = () => {
 
   return (
     <div
-      className={`flex flex-row justify-between items-center sm:w-[50%] sm:h-[18%] h-full sm:px-8 sm:text-sm`}
+      className={`flex flex-row justify-between items-center sm:w-[50%] sm:h-[18%] h-full sm:px-8 sm:text-sm relative `}
     >
       {!(width < 640) ? (
         <div
@@ -90,16 +91,27 @@ const NavBar = () => {
           />
         </div>
       ) : null}
-      <div className="">
+      <div className=" flex flex-col items-center">
         {width < 640 ? (
-          <IoIosMenu
-            className={`w-[30px] h-[30px]`}
-            style={{
-              color: theme?.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
-            }}
-          />
+          !menuExpand ? (
+            <FaXmark
+              className={`w-[30px] h-[30px]`}
+              style={{
+                color: theme?.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
+              }}
+              onClick={() => setMenuExpand(false)}
+            />
+          ) : (
+            <IoIosMenu
+              className={`w-[30px] h-[30px]`}
+              style={{
+                color: theme?.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
+              }}
+              onClick={() => setMenuExpand(true)}
+            />
+          )
         ) : null}
-        <div className="flex flex-col sm:flex-row sm:gap-10 items-center justify-center">
+        <div className="flex flex-col sm:flex-row sm:gap-10 items-center justify-center relative">
           {routes.map((route, key) => {
             return route.visibility === "viewer" ? (
               <div
@@ -113,7 +125,7 @@ const NavBar = () => {
               </div>
             ) : null;
           })}
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center  top-0 right-5">
             {theme?.dark ? (
               <MdOutlineLightMode
                 className={`w-[30px] h-[30px]`}
