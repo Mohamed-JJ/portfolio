@@ -7,8 +7,10 @@ import { useParams, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
-
-import React, { useContext, useEffect } from "react";
+import { IoIosMenu } from "react-icons/io";
+import React, { useContext, useEffect, useState } from "react";
+import Image from "next/image";
+import { link } from "fs";
 
 const CheckIfAdmin = async () => {
   return await false;
@@ -21,19 +23,16 @@ const HandleClick = (router: AppRouterInstance, path: string) => {
 const NavBar = () => {
   const theme = useContext(ThemeContext);
   const [width, height] = useWindowSize();
-  const [windowHeight, setWindowHeight] = React.useState(0);
-  const router = useRouter();
-  const param = useParams();
-  const searchParam = useSearchParams();
-  const { data: isAdmin } = useQuery({
-    queryKey: ["Admin"],
-    queryFn: async () => CheckIfAdmin(),
+  const [{ windowWidth, windowHeight }, setWindowSize] = useState({
+    windowWidth: width,
+    windowHeight: height,
   });
-
+  const [menuExpand, setMenuExpand] = useState(true);
+  const router = useRouter();
   const routes: { name: string; path: string; visibility: string }[] = [
     {
       name: "Projects",
-      path: "/",
+      path: "/projects",
       visibility: "viewer",
     },
     {
@@ -58,20 +57,56 @@ const NavBar = () => {
     },
   ];
 
+  useEffect(() => {
+    setWindowSize({ windowWidth: width, windowHeight: height });
+    window.addEventListener("resize", () => {
+      setWindowSize({ windowWidth: width, windowHeight: height });
+    });
+    return () => {
+      window.removeEventListener("resize", () => {
+        setWindowSize({ windowWidth: width, windowHeight: height });
+      });
+    };
+  }, [width, height]);
+
   return (
     <div
-      className={`flex flex-row justify-between items-center sm:w-[60%] sm:h-[18%] sm:px-8 border-black border text-${
-        !theme?.dark ? "white" : "black"
-      } sm:text-sm`}
+      className={`flex flex-row justify-between items-center sm:w-[50%] sm:h-[18%] h-full sm:px-8 sm:text-sm`}
     >
-      <div>logo</div>
-      <div>
+      {!(width < 640) ? (
+        <div
+          onClick={() => HandleClick(router, "/")}
+          className="hover:cursor-pointer opacity-50"
+        >
+          <Image
+            src={
+              !theme?.dark
+                ? "/logos/dark-mj-logo.png"
+                : "/logos/light-mj-logo.png"
+            }
+            alt="logo"
+            width={50}
+            height={50}
+          />
+        </div>
+      ) : null}
+      <div className="">
+        {width < 640 ? (
+          <IoIosMenu
+            className={`w-[30px] h-[30px]`}
+            style={{
+              color: theme?.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
+            }}
+          />
+        ) : null}
         <div className="flex flex-col sm:flex-row sm:gap-10 items-center justify-center">
           {routes.map((route, key) => {
             return route.visibility === "viewer" ? (
               <div
                 key={key}
-                className="text-gray-300"
+                className={`text-gray-${
+                  theme?.dark ? "300" : "700"
+                } cursor-pointer`}
                 onClick={() => HandleClick(router, route.path)}
               >
                 {route.name}
@@ -80,11 +115,16 @@ const NavBar = () => {
           })}
           <div className="flex justify-center items-center">
             {theme?.dark ? (
-              <MdOutlineLightMode className={`w-[30px] h-[30px]`} />
+              <MdOutlineLightMode
+                className={`w-[30px] h-[30px]`}
+                style={{
+                  color: theme.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
+                }}
+              />
             ) : (
               <MdOutlineDarkMode
-                className={`w-[30px] h-[30px] bg-gray-300`}
-                color={`rgb(62,73,88)`}
+                className={`w-[30px] h-[30px]`}
+                color={`green`}
               />
             )}
           </div>
