@@ -12,6 +12,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import { link } from "fs";
 import { FaXmark } from "react-icons/fa6";
+import Logo from "./logo";
 
 const CheckIfAdmin = async () => {
   return await false;
@@ -25,8 +26,8 @@ const NavBar = () => {
   const theme = useContext(ThemeContext);
   const [width, height] = useWindowSize();
   const [{ windowWidth, windowHeight }, setWindowSize] = useState({
-    windowWidth: width,
-    windowHeight: height,
+    windowWidth: 0,
+    windowHeight: 0,
   });
   const [menuExpand, setMenuExpand] = useState(true);
   const router = useRouter();
@@ -74,7 +75,7 @@ const NavBar = () => {
     <div
       className={`flex flex-row justify-between items-center sm:w-[50%] sm:h-[18%] h-full sm:px-8 sm:text-sm relative `}
     >
-      {!(width < 640) ? (
+      {!(windowWidth < 640) ? (
         <div
           onClick={() => HandleClick(router, "/")}
           className="hover:cursor-pointer opacity-50"
@@ -92,7 +93,7 @@ const NavBar = () => {
         </div>
       ) : null}
       <div className=" flex flex-col items-center">
-        {width < 640 ? (
+        {windowWidth < 640 ? (
           !menuExpand ? (
             <FaXmark
               className={`w-[30px] h-[30px]`}
