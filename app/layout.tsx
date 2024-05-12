@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <ContextProvider>
         <QueryComponent>
-          <body className={inter.className + " overflow-hidden border-white border"}>
+          <body className={inter.className + " overflow-hidden border-white border relative"}>
             <AuroraBackgroundDemo>
               <NavBar/>
               {children}

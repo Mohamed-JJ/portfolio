@@ -10,6 +10,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import { FaXmark } from "react-icons/fa6";
 import Options from "./options";
+import { AnimatePresence, motion } from "framer-motion"
 
 const CheckIfAdmin = async () => {
   return await false;
@@ -73,7 +74,7 @@ const NavBar = () => {
       className={`flex sm:flex-row ${!menuExpand ? "justify-between" : "justify-center"}
       items-center sm:w-[50%] sm:h-[18%] w-full mt-8 border border-white
       ${menuExpand ? "h-[100%]" : "h-[18%]"}
-      sm:px-8 sm:text-sm `}
+      sm:px-8 sm:text-sm`}
     >
       {!menuExpand ? (
         <div
@@ -92,64 +93,72 @@ const NavBar = () => {
           />
         </div>
       ) : null}
-      <div className={`flex  items-center ${menuExpand ? "justify-center items-center w-full h-full" : ""} relative`}>
-        {windowWidth < 640 &&
-          (menuExpand ? (
-            <FaXmark
-              className={`w-[30px] h-[30px] mr-3 absolute top-[80px] right-2`}
-              style={{
-                color: theme?.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
-              }}
-              onClick={() => setMenuExpand(false)}
-            />
-          ) : (
-            <IoIosMenu
-              className={`w-[30px] h-[30px] mr-3`}
-              style={{
-                color: theme?.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
-              }}
-              onClick={() => setMenuExpand(true)}
-            />
-          ))}
-        <div className="flex flex-col sm:flex-row sm:gap-10 items-center justify-center">
-          {
-            windowWidth < 640 ?
-              (menuExpand ?
-                <Options router={router} routes={routes} HandleClick={HandleClick} clas="" /> : null) :
-              (<Options router={router} routes={routes} HandleClick={HandleClick} clas="" />)
-          }
-          {windowWidth < 640 ? (
-            menuExpand ? (
-              <div className="">
-                {theme?.dark ? (
-                  <MdOutlineLightMode
-                    className={`w-[30px] h-[30px] absolute top-[80px] left-5`}
-                    style={{
-                      color: theme.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
-                    }}
-                  />
-                ) : (
-                  <MdOutlineDarkMode
-                    className={`w-[30px] h-[30px] absolute top-[80px] left-5`}
-                  />
-                )}
-              </div>
-            ) : null
-          ) : theme?.dark ? (
-            <MdOutlineLightMode
-              className={`w-[30px] h-[30px]`}
-              style={{
-                color: theme.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
-              }}
-            />
-          ) : (
-            <MdOutlineDarkMode
-              className={`w-[30px] h-[30px]`}
-              color={`green`}
-            />
-          )}
-        </div>
-      </div>
+      <AnimatePresence>
+        <motion.div className={`flex  items-center ${menuExpand ? "justify-center items-center w-full h-full" : ""} relative`}
+          initial={{ opacity: 0, y: -120 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+        >
+
+          {windowWidth < 640 &&
+            (menuExpand ? (
+              <FaXmark
+                className={`w-[30px] h-[30px] mr-3 absolute top-[100px] right-2`}
+                style={{
+                  color: theme?.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
+                }}
+                onClick={() => setMenuExpand(false)}
+              />
+            ) : (
+              <IoIosMenu
+                className={`w-[30px] h-[30px] mr-3`}
+                style={{
+                  color: theme?.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
+                }}
+                onClick={() => setMenuExpand(true)}
+              />
+            ))}
+          <div className={`flex flex-col sm:flex-row sm:gap-10 gap-5 items-center justify-center`}>
+            {
+              windowWidth < 640 ?
+                (menuExpand ?
+                  <Options router={router} routes={routes} HandleClick={HandleClick} clas="" /> : null) :
+                (<Options router={router} routes={routes} HandleClick={HandleClick} clas="" />)
+            }
+            {windowWidth < 640 ? (
+              menuExpand ? (
+                <div className="">
+                  {theme?.dark ? (
+                    <MdOutlineLightMode
+                      className={`w-[30px] h-[30px] absolute top-[100px] left-5`}
+                      style={{
+                        color: theme.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
+                      }}
+                    />
+                  ) : (
+                    <MdOutlineDarkMode
+                      className={`w-[30px] h-[30px] absolute top-[100px] left-5`}
+                    />
+                  )}
+                </div>
+              ) : null
+            ) : theme?.dark ? (
+              <MdOutlineLightMode
+                className={`w-[30px] h-[30px]`}
+                style={{
+                  color: theme.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
+                }}
+              />
+            ) : (
+              <MdOutlineDarkMode
+                className={`w-[30px] h-[30px]`}
+                color={`green`}
+              />
+            )}
+          </div>
+        </motion.div>
+      </AnimatePresence>
+
     </div>
   );
 };

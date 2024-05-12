@@ -22,19 +22,18 @@ export default function Home() {
   return (
     <main className="w-screen h-screen flex justify-center">
       <div
-        className={`sm:pt-32 ${
-          theme?.dark ? "text-gray-300" : "text-gray-700"
-        }`}
+        className={`sm:pt-32 ${theme?.dark ? "text-gray-300" : "text-gray-700"
+          }`}
       >
         <div id="content-section">
           <div>
-
+            dgsdghdgyhj
           </div>
           <div>
 
           </div>
           <div>
-            
+
           </div>
         </div>
       </div>

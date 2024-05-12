@@ -19,7 +19,7 @@ export function AuroraBackgroundDemo({
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="relative flex flex-col items-center justify-center "
+        className=" sm:flex sm:flex-col sm:items-center sm:justify-center "
       >
         {children}
       </motion.div>
