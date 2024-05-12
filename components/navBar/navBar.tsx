@@ -69,11 +69,11 @@ const NavBar = () => {
 
   return (
     <div
-      className={`flex sm:flex-row flex-row border-2 border-white px-5 py-3 sm:py-0 ${
-        !menuExpand ? "justify-between" : ""
+      className={`flex sm:flex-row border-2 border-white px-5 py-3 sm:py-0 ${
+        !menuExpand ? "justify-between" : "justify-center"
       } items-center sm:w-[50%] sm:h-[18%] w-full ${
         menuExpand ? "h-full" : "h-[18%]"
-      } sm:px-8 sm:text-sm relative `}
+      } sm:px-8 sm:text-sm pt-5`}
     >
       {!menuExpand ? (
         <div
@@ -92,7 +92,7 @@ const NavBar = () => {
           />
         </div>
       ) : null}
-      <div className=" flex sm:flex-col flex-row items-center ">
+      <div className="flex  items-center ">
         {windowWidth < 640 &&
           (menuExpand ? (
             <FaXmark
@@ -128,7 +128,7 @@ const NavBar = () => {
             })}
           {windowWidth < 640 ? (
             menuExpand ? (
-              <div className="flex justify-center items-center">
+              <div className="">
                 {theme?.dark ? (
                   <MdOutlineLightMode
                     className={`w-[30px] h-[30px]`}
