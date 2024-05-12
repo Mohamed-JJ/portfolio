@@ -69,7 +69,9 @@ const NavBar = () => {
 
   return (
     <div
-      className={`flex sm:flex-row flex-col-reverse border-2 border-white sm:justify-between justify-center items-center sm:w-[50%] sm:h-[18%] w-full ${
+      className={`flex sm:flex-row flex-row border-2 border-white px-5 py-3 sm:py-0 ${
+        !menuExpand ? "justify-between" : ""
+      } items-center sm:w-[50%] sm:h-[18%] w-full ${
         menuExpand ? "h-full" : "h-[18%]"
       } sm:px-8 sm:text-sm relative `}
     >
@@ -91,8 +93,8 @@ const NavBar = () => {
         </div>
       ) : null}
       <div className=" flex sm:flex-col flex-row items-center ">
-        {windowWidth < 640 && (
-          !menuExpand ? (
+        {windowWidth < 640 &&
+          (menuExpand ? (
             <FaXmark
               className={`w-[30px] h-[30px]`}
               style={{
@@ -108,8 +110,7 @@ const NavBar = () => {
               }}
               onClick={() => setMenuExpand(true)}
             />
-          )
-        )}
+          ))}
         <div className="flex flex-col sm:flex-row sm:gap-10 items-center justify-center relative">
           {menuExpand &&
             routes.map((route, key) => {
@@ -125,21 +126,37 @@ const NavBar = () => {
                 </div>
               ) : null;
             })}
-          <div className="flex justify-center items-center">
-            {theme?.dark ? (
-              <MdOutlineLightMode
-                className={`w-[30px] h-[30px]`}
-                style={{
-                  color: theme.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
-                }}
-              />
-            ) : (
-              <MdOutlineDarkMode
-                className={`w-[30px] h-[30px]`}
-                color={`green`}
-              />
-            )}
-          </div>
+          {windowWidth < 640 ? (
+            menuExpand ? (
+              <div className="flex justify-center items-center">
+                {theme?.dark ? (
+                  <MdOutlineLightMode
+                    className={`w-[30px] h-[30px]`}
+                    style={{
+                      color: theme.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
+                    }}
+                  />
+                ) : (
+                  <MdOutlineDarkMode
+                    className={`w-[30px] h-[30px]`}
+                    color={`green`}
+                  />
+                )}
+              </div>
+            ) : null
+          ) : theme?.dark ? (
+            <MdOutlineLightMode
+              className={`w-[30px] h-[30px]`}
+              style={{
+                color: theme.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
+              }}
+            />
+          ) : (
+            <MdOutlineDarkMode
+              className={`w-[30px] h-[30px]`}
+              color={`green`}
+            />
+          )}
         </div>
       </div>
     </div>
