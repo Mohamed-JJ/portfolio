@@ -72,13 +72,13 @@ const NavBar = () => {
     <div
       className={`flex sm:flex-row ${!menuExpand ? "justify-between" : "justify-center"}
       items-center sm:w-[50%] sm:h-[18%] w-full mt-8 border border-white
-      ${menuExpand ? "h-full" : "h-[18%]"}
+      ${menuExpand ? "h-[100%]" : "h-[18%]"}
       sm:px-8 sm:text-sm `}
     >
       {!menuExpand ? (
         <div
           onClick={() => HandleClick(router, "/")}
-          className="hover:cursor-pointer opacity-50  ml-3"
+          className={`hover:cursor-pointer opacity-50 ml-3`}
         >
           <Image
             src={
@@ -92,11 +92,11 @@ const NavBar = () => {
           />
         </div>
       ) : null}
-      <div className="flex  items-center ">
+      <div className={`flex  items-center ${menuExpand ? "justify-center items-center w-full h-full" : ""} relative`}>
         {windowWidth < 640 &&
           (menuExpand ? (
             <FaXmark
-              className={`w-[30px] h-[30px] mr-3`}
+              className={`w-[30px] h-[30px] mr-3 absolute top-[80px] right-2`}
               style={{
                 color: theme?.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
               }}
@@ -111,27 +111,26 @@ const NavBar = () => {
               onClick={() => setMenuExpand(true)}
             />
           ))}
-        <div className="flex flex-col sm:flex-row sm:gap-10 items-center justify-center relative">
+        <div className="flex flex-col sm:flex-row sm:gap-10 items-center justify-center">
           {
             windowWidth < 640 ?
               (menuExpand ?
-              <Options router={router} routes={routes} HandleClick={HandleClick} /> : null):
-              (<Options router={router} routes={routes} HandleClick={HandleClick} />)
+                <Options router={router} routes={routes} HandleClick={HandleClick} clas="" /> : null) :
+              (<Options router={router} routes={routes} HandleClick={HandleClick} clas="" />)
           }
           {windowWidth < 640 ? (
             menuExpand ? (
               <div className="">
                 {theme?.dark ? (
                   <MdOutlineLightMode
-                    className={`w-[30px] h-[30px]`}
+                    className={`w-[30px] h-[30px] absolute top-[80px] left-5`}
                     style={{
                       color: theme.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
                     }}
                   />
                 ) : (
                   <MdOutlineDarkMode
-                    className={`w-[30px] h-[30px]`}
-                    color={`green`}
+                    className={`w-[30px] h-[30px] absolute top-[80px] left-5`}
                   />
                 )}
               </div>
