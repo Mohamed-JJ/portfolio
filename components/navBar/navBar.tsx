@@ -9,6 +9,7 @@ import { IoIosMenu } from "react-icons/io";
 import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import { FaXmark } from "react-icons/fa6";
+import Options from "./options";
 
 const CheckIfAdmin = async () => {
   return await false;
@@ -69,16 +70,15 @@ const NavBar = () => {
 
   return (
     <div
-      className={`flex sm:flex-row border-2 border-white px-5 py-3 sm:py-0 ${
-        !menuExpand ? "justify-between" : "justify-center"
-      } items-center sm:w-[50%] sm:h-[18%] w-full ${
-        menuExpand ? "h-full" : "h-[18%]"
-      } sm:px-8 sm:text-sm pt-5`}
+      className={`flex sm:flex-row ${!menuExpand ? "justify-between" : "justify-center"}
+      items-center sm:w-[50%] sm:h-[18%] w-full mt-8 border border-white
+      ${menuExpand ? "h-full" : "h-[18%]"}
+      sm:px-8 sm:text-sm `}
     >
       {!menuExpand ? (
         <div
           onClick={() => HandleClick(router, "/")}
-          className="hover:cursor-pointer opacity-50"
+          className="hover:cursor-pointer opacity-50  ml-3"
         >
           <Image
             src={
@@ -87,8 +87,8 @@ const NavBar = () => {
                 : "/logos/light-mj-logo.png"
             }
             alt="logo"
-            width={50}
-            height={50}
+            width={windowWidth < 640 ? 40 : 50}
+            height={40}
           />
         </div>
       ) : null}
@@ -96,7 +96,7 @@ const NavBar = () => {
         {windowWidth < 640 &&
           (menuExpand ? (
             <FaXmark
-              className={`w-[30px] h-[30px]`}
+              className={`w-[30px] h-[30px] mr-3`}
               style={{
                 color: theme?.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
               }}
@@ -104,7 +104,7 @@ const NavBar = () => {
             />
           ) : (
             <IoIosMenu
-              className={`w-[30px] h-[30px]`}
+              className={`w-[30px] h-[30px] mr-3`}
               style={{
                 color: theme?.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
               }}
@@ -112,20 +112,12 @@ const NavBar = () => {
             />
           ))}
         <div className="flex flex-col sm:flex-row sm:gap-10 items-center justify-center relative">
-          {menuExpand &&
-            routes.map((route, key) => {
-              return route.visibility === "viewer" ? (
-                <div
-                  key={key}
-                  className={`text-gray-${
-                    theme?.dark ? "300" : "700"
-                  } cursor-pointer`}
-                  onClick={() => HandleClick(router, route.path)}
-                >
-                  {route.name}
-                </div>
-              ) : null;
-            })}
+          {
+            windowWidth < 640 ?
+              (menuExpand ?
+              <Options router={router} routes={routes} HandleClick={HandleClick} /> : null):
+              (<Options router={router} routes={routes} HandleClick={HandleClick} />)
+          }
           {windowWidth < 640 ? (
             menuExpand ? (
               <div className="">
