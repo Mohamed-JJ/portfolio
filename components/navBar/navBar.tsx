@@ -10,11 +10,9 @@ import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import { FaXmark } from "react-icons/fa6";
 import Options from "./options";
-import { AnimatePresence, motion } from "framer-motion"
-
-const CheckIfAdmin = async () => {
-  return await false;
-};
+import { AnimatePresence, motion } from "framer-motion";
+import DesktopVersion from "./desktopVersion";
+import MobileVersion from "./mobileVersion";
 
 const HandleClick = (router: AppRouterInstance, path: string) => {
   router.push(path);
@@ -70,96 +68,23 @@ const NavBar = () => {
   }, [width, height]);
 
   return (
-    <div
-      className={`flex sm:flex-row ${!menuExpand ? "justify-between" : "justify-center"}
-      items-center sm:w-[50%] sm:h-[18%] w-full mt-8 border border-white
-      ${menuExpand ? "h-[100%]" : "h-[18%]"}
-      sm:px-8 sm:text-sm`}
-    >
-      {!menuExpand ? (
-        <div
-          onClick={() => HandleClick(router, "/")}
-          className={`hover:cursor-pointer opacity-50 ml-3`}
-        >
-          <Image
-            src={
-              !theme?.dark
-                ? "/logos/dark-mj-logo.png"
-                : "/logos/light-mj-logo.png"
-            }
-            alt="logo"
-            width={windowWidth < 640 ? 40 : 50}
-            height={40}
-          />
-        </div>
-      ) : null}
-      <AnimatePresence>
-        <motion.div className={`flex  items-center ${menuExpand ? "justify-center items-center w-full h-full" : ""} relative`}
-          initial={{ opacity: 0, y: -120 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-        >
-
-          {windowWidth < 640 &&
-            (menuExpand ? (
-              <FaXmark
-                className={`w-[30px] h-[30px] mr-3 absolute top-[100px] right-2`}
-                style={{
-                  color: theme?.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
-                }}
-                onClick={() => setMenuExpand(false)}
-              />
-            ) : (
-              <IoIosMenu
-                className={`w-[30px] h-[30px] mr-3`}
-                style={{
-                  color: theme?.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
-                }}
-                onClick={() => setMenuExpand(true)}
-              />
-            ))}
-          <div className={`flex flex-col sm:flex-row sm:gap-10 gap-5 items-center justify-center`}>
-            {
-              windowWidth < 640 ?
-                (menuExpand ?
-                  <Options router={router} routes={routes} HandleClick={HandleClick} clas="" /> : null) :
-                (<Options router={router} routes={routes} HandleClick={HandleClick} clas="" />)
-            }
-            {windowWidth < 640 ? (
-              menuExpand ? (
-                <div className="">
-                  {theme?.dark ? (
-                    <MdOutlineLightMode
-                      className={`w-[30px] h-[30px] absolute top-[100px] left-5`}
-                      style={{
-                        color: theme.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
-                      }}
-                    />
-                  ) : (
-                    <MdOutlineDarkMode
-                      className={`w-[30px] h-[30px] absolute top-[100px] left-5`}
-                    />
-                  )}
-                </div>
-              ) : null
-            ) : theme?.dark ? (
-              <MdOutlineLightMode
-                className={`w-[30px] h-[30px]`}
-                style={{
-                  color: theme.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
-                }}
-              />
-            ) : (
-              <MdOutlineDarkMode
-                className={`w-[30px] h-[30px]`}
-                color={`green`}
-              />
-            )}
-          </div>
-        </motion.div>
-      </AnimatePresence>
-
-    </div>
+    <>
+      {windowWidth > 640 ? (
+        <DesktopVersion
+          HandleClick={HandleClick}
+          router={router}
+          routes={routes}
+          theme={theme!}
+        />
+      ) : (
+        <MobileVersion
+          HandleClick={HandleClick}
+          router={router}
+          routes={routes}
+          theme={theme!}
+        />
+      )}
+    </>
   );
 };
 
