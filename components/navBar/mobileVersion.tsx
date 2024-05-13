@@ -1,9 +1,9 @@
-import { Theme } from "@/types/theme";
-import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
-import React, { useState } from "react";
+"use client"
+import { useEffect, useState } from "react";
 import ExpandedMenu from "./ExpandedMenu";
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { Theme } from "@/types/theme";
 import Image from "next/image";
-import { FaXmark } from "react-icons/fa6";
 import { IoIosMenu } from "react-icons/io";
 
 const MobileVersion = ({
@@ -18,16 +18,30 @@ const MobileVersion = ({
   theme: Theme | null;
 }) => {
   const [menuExpand, setMenuExpand] = useState(false);
-  console.log("mobile");
+
+  useEffect(() => {
+    console.log("theme", theme);
+  }, [theme]);
+
+  const toggleMenu = () => {
+    setMenuExpand(!menuExpand);
+    console.log("menuExpand", menuExpand);
+  };
+
+  console.log("in mobile version");
+
   return (
     <>
       {menuExpand ? (
         <ExpandedMenu setMenuExpand={setMenuExpand} />
       ) : (
-        <div className="w-full h-[18%] border border-white flex flex-row justify-between items-center">
+        <div
+          className="w-full h-[18%] border border-white flex flex-row justify-between items-center"
+          onClick={()=>console.log("clicked")}
+        >
           <div
             onClick={() => HandleClick(router, "/")}
-            className={`hover:cursor-pointer opacity-50 ml-3`}
+            className="cursor-pointer opacity-50 ml-3"
           >
             <Image
               src={
@@ -39,23 +53,15 @@ const MobileVersion = ({
               width={50}
               height={50}
             />
-          </div>
-          <div
-            className="mr-3 border-white border"
-            onClick={() => {
-              console.log("clicked");
-              setMenuExpand(true);
-            }}
-          >
-            <IoIosMenu
-              className="w-[40px] h-[40px]"
-              color={theme!.dark! ? "gray" : "black"}
-              onClick={() => {
-                console.log("clicked");
-                setMenuExpand(true);
-              }}
-            />
-          </div>
+            </div>
+            <div className="w-40 h-40 bg-white" onClick={()=> console.log("clicekd")}>
+
+            </div>
+          <IoIosMenu
+            className="w-10 h-10 mr-3 cursor-pointer"
+            color={theme?.dark ? "gray" : "black"}
+            onClick={toggleMenu}
+          />
         </div>
       )}
     </>
