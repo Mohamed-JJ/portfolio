@@ -11,32 +11,28 @@ const MobileVersion = ({
   router,
   HandleClick,
   theme,
+  setmenuExpand,
+  MenuExpand,
 }: {
   routes: { name: string; path: string; visibility: string }[];
   router: AppRouterInstance;
   HandleClick: (router: AppRouterInstance, path: string) => void;
   theme: Theme | null;
+  setmenuExpand: React.Dispatch<React.SetStateAction<boolean>>;
+  MenuExpand: boolean;
 }) => {
-  const [menuExpand, setMenuExpand] = useState(false);
-
-  // useEffect(() => {
-  //   console.log("theme", theme);
-  // }, [theme]);
-
   const toggleMenu = () => {
-    setMenuExpand(!menuExpand);
-    console.log("menuExpand", menuExpand);
+    setmenuExpand(!MenuExpand);
+    console.log("menuExpand", MenuExpand);
   };
-
-  // console.log("in mobile version");
 
   return (
     <>
-      {menuExpand ? (
-        <ExpandedMenu setMenuExpand={setMenuExpand} />
+      {MenuExpand ? (
+        <ExpandedMenu setMenuExpand={setmenuExpand} routes={routes} />
       ) : (
         <div
-          className="w-full flex flex-row justify-between items-center"
+          className="w-full h-full flex flex-row justify-between items-center border border-white"
           onClick={() => console.log("clicked")}
         >
           <div
