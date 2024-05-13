@@ -68,7 +68,7 @@ const NavBar = () => {
   }, [width, height]);
 
   return (
-    <>
+    <div className="w-[50%] h-[18%]">
       {windowWidth > 640 ? (
         <DesktopVersion
           HandleClick={HandleClick}
@@ -84,7 +84,7 @@ const NavBar = () => {
           theme={theme!}
         />
       )}
-    </>
+    </div>
   );
 };
 

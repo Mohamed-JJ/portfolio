@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 import ExpandedMenu from "./ExpandedMenu";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
@@ -19,16 +19,16 @@ const MobileVersion = ({
 }) => {
   const [menuExpand, setMenuExpand] = useState(false);
 
-  useEffect(() => {
-    console.log("theme", theme);
-  }, [theme]);
+  // useEffect(() => {
+  //   console.log("theme", theme);
+  // }, [theme]);
 
   const toggleMenu = () => {
     setMenuExpand(!menuExpand);
     console.log("menuExpand", menuExpand);
   };
 
-  console.log("in mobile version");
+  // console.log("in mobile version");
 
   return (
     <>
@@ -36,8 +36,8 @@ const MobileVersion = ({
         <ExpandedMenu setMenuExpand={setMenuExpand} />
       ) : (
         <div
-          className="w-full h-[18%] border border-white flex flex-row justify-between items-center"
-          onClick={()=>console.log("clicked")}
+          className="w-full flex flex-row justify-between items-center"
+          onClick={() => console.log("clicked")}
         >
           <div
             onClick={() => HandleClick(router, "/")}
@@ -53,10 +53,7 @@ const MobileVersion = ({
               width={50}
               height={50}
             />
-            </div>
-            <div className="w-40 h-40 bg-white" onClick={()=> console.log("clicekd")}>
-
-            </div>
+          </div>
           <IoIosMenu
             className="w-10 h-10 mr-3 cursor-pointer"
             color={theme?.dark ? "gray" : "black"}

@@ -26,7 +26,7 @@ const DesktopVersion = ({
   return (
     <div
       className={`flex sm:flex-row 
-      items-center justify-between sm:w-[50%] sm:h-[18%] w-full mt-8 border border-white
+      items-center justify-between w-full h-full border border-white
       sm:px-8 sm:text-sm`}
     >
       <div
