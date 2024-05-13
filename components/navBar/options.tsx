@@ -20,8 +20,8 @@ const Options = ({
         return route.visibility === "viewer" ? (
           <div
             key={key}
-            className={`text-gray-${
-              theme?.dark ? "300" : "700"
+            className={`${
+              theme?.dark ? "text-gray-400" : "text-gray-700"
             } cursor-pointer ${clas}`}
             onClick={() => HandleClick(router, route.path)}
           >

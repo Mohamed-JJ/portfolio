@@ -58,10 +58,13 @@ const NavBar = () => {
   useEffect(() => {
     setWindowSize({ windowWidth: width, windowHeight: height });
     window.addEventListener("resize", () => {
+      if (width > 640) setMenuExpand(false);
       setWindowSize({ windowWidth: width, windowHeight: height });
     });
     return () => {
       window.removeEventListener("resize", () => {
+        if (width > 640) setMenuExpand(false);
+
         setWindowSize({ windowWidth: width, windowHeight: height });
       });
     };
