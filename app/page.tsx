@@ -1,10 +1,13 @@
 "use client";
+import RootPageDesktop from "@/components/rootPage/RootPageDesktop";
 import { ThemeContext } from "@/useContext/context";
+import { useWindowSize } from "@react-hook/window-size";
 import Image from "next/image";
 import { useContext } from "react";
 
 export default function Home() {
   const theme = useContext(ThemeContext);
+  const [width, height] = useWindowSize();
   const AdminInfo = {
     name: "Mohamed",
     lastName: "Jarboua",
@@ -20,23 +23,8 @@ export default function Home() {
     linkedIn: "",
   };
   return (
-    <main className="w-screen h-screen flex justify-center">
-      <div
-        className={`sm:pt-32 ${theme?.dark ? "text-gray-300" : "text-gray-700"
-          }`}
-      >
-        <div id="content-section">
-          <div>
-            dgsdghdgyhj
-          </div>
-          <div>
-
-          </div>
-          <div>
-
-          </div>
-        </div>
-      </div>
-    </main>
+    <div className="w-full h-full">
+      <RootPageDesktop theme={theme!} info={AdminInfo} />
+    </div>
   );
 }

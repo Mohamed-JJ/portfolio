@@ -32,7 +32,7 @@ const MobileVersion = ({
         <ExpandedMenu setMenuExpand={setmenuExpand} routes={routes} />
       ) : (
         <div
-          className="w-full h-full flex flex-row justify-between items-center border border-white"
+          className="w-full h-full flex flex-row justify-between items-center"
           onClick={() => console.log("clicked")}
         >
           <div
@@ -51,7 +51,7 @@ const MobileVersion = ({
             />
           </div>
           <IoIosMenu
-            className="w-10 h-10 mr-3 cursor-pointer"
+            className="w-[40px] h-[40px] mr-3 cursor-pointer"
             color={theme?.dark ? "gray" : "black"}
             onClick={toggleMenu}
           />
