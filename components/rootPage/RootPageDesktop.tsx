@@ -7,18 +7,49 @@ const RootPageDesktop = ({
 }: {
   theme: Theme | null;
   info: any;
-	}) => {
-	const [hover, setHover] = useState(false);
-	const h1Ref = useRef();
-	useEffect(() => {
-		const h1Ref = document.querySelector("h1");
-		if (h1Ref) {
-			h1Ref.onmouseover = (event: MouseEvent) => {
-				h1Ref.innerText = Math.random().toString();
-				console.log("hovered");
-			};
-		}
-	}, [h1Ref]);
+}) => {
+  const [h1Ref, setH1Ref] = useState<string>("I AM MOHAMED JARBOUA"); // the refirence if for the heading tag to be targeted when hovered over
+  const colors = [
+    "text-blue-300",
+    "text-blue-700",
+    "text-purple-300",
+    "text-purple-700",
+    "text-green-300",
+    "text-green-700",
+    "text-red-300",
+    "text-red-700",
+    "text-pink-300",
+    "text-pink-700",
+    "text-yellow-300",
+    "text-yellow-700",
+  ];
+  const [color, setColor] = useState<string>("white");
+  const [firstH1State, setfirstH1State] = useState<string>(
+    "I AM MOHAMED JARBOUA"
+  ); // the refirence if for the heading tag to be targeted when hovered over
+
+  // idea, use an array and set it with a value and use that value to diplay it each time the mose hovers
+  const ChangeStyle = () => {
+    let iterations = 0;
+    const interval = setInterval(() => {
+      const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const holder = h1Ref
+        .split("")
+        .map((char, index) => {
+          if (index < iterations) return firstH1State[index];
+          return letters[Math.floor(Math.random() * 26)];
+        })
+        .join("");
+      setColor(colors[Math.floor(Math.random() * colors.length)]);
+      setH1Ref(holder);
+      if (iterations >= firstH1State.length) {
+        clearInterval(interval);
+        setColor("white");
+      }
+      iterations += 1 / 3;
+    }, 30);
+  };
+
   return (
     <div
       className={`sm:pt-40 w-full h-full flex flex-col items-center gap-2 border border-white ${
@@ -34,8 +65,10 @@ const RootPageDesktop = ({
       <div className="w-[150px] min-h-[150px] border-white border">5</div>
       <div className="w-[150px] min-h-[150px] border-white border">6</div>
       <div className="w-[150px] min-h-[150px] border-white border">7</div> */}
-      <div className="text-white w-[40%]">
-        <h1 className="font-bold text-4xl">I AM {"MOHAMED JARBOUA"}</h1>
+      <div className={`${color} w-[40%]`}>
+        <h1 className="font-bold text-4xl" onMouseOver={ChangeStyle}>
+          {h1Ref}
+        </h1>
       </div>
     </div>
   );
