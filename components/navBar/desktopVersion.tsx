@@ -35,7 +35,7 @@ const DesktopVersion = ({
       >
         <Image
           src={
-            !theme?.dark
+            !theme!.dark
               ? "/logos/dark-mj-logo.png"
               : "/logos/light-mj-logo.png"
           }
@@ -60,11 +60,11 @@ const DesktopVersion = ({
               HandleClick={HandleClick}
               clas=""
             />
-            {theme?.dark ? (
+            {theme!.dark ? (
               <MdOutlineLightMode
                 className={`w-[30px] h-[30px]`}
                 style={{
-                  color: theme.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
+                  color: theme!.dark ? "rgb(209,213,219)" : "rgb(55,65,81)",
                 }}
               />
             ) : (
