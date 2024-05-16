@@ -12,6 +12,8 @@ import { FaXmark } from "react-icons/fa6";
 import Options from "./options";
 import { AnimatePresence, motion } from "framer-motion";
 import { Theme } from "@/types/theme";
+import DarkLogo from "@/public/logos/dark-mj-logo.png";
+import LightLogo from "@/public/logos/light-mj-logo.png";
 const DesktopVersion = ({
   routes,
   router,
@@ -34,11 +36,7 @@ const DesktopVersion = ({
         className={`hover:cursor-pointer opacity-50 ml-3`}
       >
         <Image
-          src={
-            !theme!.dark
-              ? "/logos/dark-mj-logo.png"
-              : "/logos/light-mj-logo.png"
-          }
+          src={!theme!.dark ? DarkLogo : LightLogo}
           alt="logo"
           width={50}
           height={50}

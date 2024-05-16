@@ -101,7 +101,7 @@ const RootPageDesktop = ({
           Embracing sunlight or indoor settings is what i long for. I am all
           about minimalism, finding beauty in simplicity and order. Beyond
           crafting elegant web experiences, you will find me immersed in
-          articles or swaying to the rhythm of Music&amp;, losing myself in
+          articles or swaying to the rhythm of Music, losing myself in
           captivating melodies. Let&apos;s{" "}
           <a
             href=""
