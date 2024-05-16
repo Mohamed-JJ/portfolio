@@ -1,6 +1,7 @@
 import { Theme } from "@/types/theme";
 import React, { useEffect, useRef, useState } from "react";
-
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 const RootPageDesktop = ({
   theme,
   info,
@@ -52,7 +53,7 @@ const RootPageDesktop = ({
 
   return (
     <div
-      className={`sm:pt-40 w-full h-full flex flex-col items-center gap-2 border border-white ${
+      className={`sm:pt-40 w-full h-full flex flex-col items-center gap-2 font-mono ${
         theme?.dark ? "text-gray-300" : "text-gray-700"
       }`}
     >
@@ -65,10 +66,72 @@ const RootPageDesktop = ({
       <div className="w-[150px] min-h-[150px] border-white border">5</div>
       <div className="w-[150px] min-h-[150px] border-white border">6</div>
       <div className="w-[150px] min-h-[150px] border-white border">7</div> */}
-      <div className={`${color} w-[40%]`}>
+      <div className={`text-white w-[40%] flex flex-col gap-7`}>
         <h1 className="font-bold text-4xl" onMouseOver={ChangeStyle}>
           {h1Ref}
         </h1>
+        <p
+          className={`${
+            theme?.dark ? "text-gray-400" : "text-gray-700"
+          } text-pretty leading-loose`}
+        >
+          Passionate Full Stack/DevOps graduate student with a knack for
+          crafting immersive digital experiences. with experience in both
+          front-end and back-end technologies, with a focus on JavaScript. with
+          proficiency in devops architecture and automation, I thrive on
+          transforming ideas into impactful{" "}
+          <a
+            href=""
+            className={`no-underline font-bold ${
+              theme?.dark ? "text-gray-300" : "text-gray-700"
+            }`}
+          >
+            projects
+          </a>
+          . Dedicated to continuous learning and driving innovation in tech.
+          Ready to bring creativity, dedication, and expertise to the table.
+        </p>
+        <p
+          className={`${
+            theme?.dark ? "text-gray-400" : "text-gray-700"
+          } leading-loose`}
+        >
+          Embracing sunlight or indoor settings is what i long for. I am all
+          about minimalism, finding beauty in simplicity and order. Beyond
+          crafting elegant web experiences, you will find me immersed in
+          articles or swaying to the rhythm of Music&amp;, losing myself in
+          captivating melodies. Let&apos;s{" "}
+          <a
+            href=""
+            className={`no-underline font-bold ${
+              theme?.dark ? "text-gray-300" : "text-gray-700"
+            }`}
+          >
+            connect
+          </a>
+          !
+        </p>
+      </div>
+      <div className="w-[40%] flex flex-col">
+        <p
+          className={`${
+            theme?.dark ? "text-gray-300" : "text-gray-700"
+          } font-bold mt-5`}
+        >
+          my Social
+        </p>
+        <div className="w-full flex flex-row gap-5 mt-5">
+          <FaLinkedin
+            className={`${
+              theme?.dark ? "text-gray-300" : "text-gray-700"
+            } w-[40px] h-[40px]`}
+          />
+          <FaGithub
+            className={`${
+              theme?.dark ? "text-gray-300" : "text-gray-700"
+            } w-[40px] h-[40px]`}
+          />
+        </div>
       </div>
     </div>
   );
