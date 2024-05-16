@@ -1,4 +1,5 @@
 import { Theme } from "@/types/theme";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
@@ -10,6 +11,7 @@ const RootPageDesktop = ({
   info: any;
 }) => {
   const [h1Ref, setH1Ref] = useState<string>("I AM MOHAMED JARBOUA"); // the refirence if for the heading tag to be targeted when hovered over
+  const router = useRouter();
   const colors = [
     "text-blue-300",
     "text-blue-700",
@@ -122,14 +124,18 @@ const RootPageDesktop = ({
         </p>
         <div className="w-full flex flex-row gap-5 mt-5">
           <FaLinkedin
+            onClick={() =>
+              router.push("https://www.linkedin.com/in/mohamed-jarboua/")
+            }
             className={`${
               theme?.dark ? "text-gray-300" : "text-gray-700"
-            } w-[40px] h-[40px]`}
+            } w-[40px] h-[40px] cursor-pointer`}
           />
           <FaGithub
+            onClick={() => router.push("https://github.com/mohamed-JJ")}
             className={`${
               theme?.dark ? "text-gray-300" : "text-gray-700"
-            } w-[40px] h-[40px]`}
+            } w-[40px] h-[40px] cursor-pointer`}
           />
         </div>
       </div>

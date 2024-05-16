@@ -1,5 +1,6 @@
 "use client";
 import RootPageDesktop from "@/components/rootPage/RootPageDesktop";
+import RootPageMobilc from "@/components/rootPage/RootPageMobilc";
 import { ThemeContext } from "@/useContext/context";
 import { useWindowSize } from "@react-hook/window-size";
 import Image from "next/image";
@@ -24,7 +25,11 @@ export default function Home() {
   };
   return (
     <div className="w-full h-full">
-      <RootPageDesktop theme={theme!} info={AdminInfo} />
+      {width < 640 ? (
+        <RootPageMobilc theme={theme!} info={AdminInfo} />
+      ) : (
+        <RootPageDesktop theme={theme!} info={AdminInfo} />
+      )}
     </div>
   );
 }
