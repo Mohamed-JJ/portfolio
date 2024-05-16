@@ -52,7 +52,7 @@ const DesktopVersion = ({
           exit={{ opacity: 0, y: -20 }}
         >
           <div
-            className={`flex flex-col  sm:flex-row sm:gap-10 gap-5 items-center justif-center`}
+            className={`flex flex-col sm:flex-row sm:gap-10 gap-5 items-center justif-center`}
           >
             <Options
               router={router}

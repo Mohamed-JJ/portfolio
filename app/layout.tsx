@@ -22,14 +22,12 @@ export default function RootLayout({
     <html lang="en">
       <ContextProvider>
         <QueryComponent>
-          <body
-            className={`${inter.className} w-screen h-screen`}
-          >
+          <body className={`${inter.className} w-screen h-screen`}>
             <AuroraBackgroundDemo>
-              <div className="h-screen w-full overflow-scroll">
-                <NavBar />
-                {children}
-              </div>
+              {/* <div className="h-screen w-full overflow-scroll"> */}
+              <NavBar />
+              {children}
+              {/* </div> */}
             </AuroraBackgroundDemo>
           </body>
         </QueryComponent>
