@@ -55,7 +55,7 @@ const RootPageDesktop = ({
 
   return (
     <div
-      className={`sm:pt-40 w-full min-h-full flex flex-col items-center gap-2 font-mono pb-5 ${
+      className={`sm:pt-[4%] w-full min-h-full flex flex-col items-center gap-2 font-mono pb-5 ${
         theme?.dark ? "text-gray-300" : "text-gray-700"
       }`}
     >
