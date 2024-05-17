@@ -59,7 +59,7 @@ const RootPageMobilc = ({
         theme?.dark ? "text-gray-300" : "text-gray-700"
       }`}
     >
-      {/* <div className="w-[150px] min-h-[150px] border-white border">dgsdghdgyhj</div>
+      {/* <div className="w-[150px] min-h-[150px] -white border">dgsdghdgyhj</div>
 	  {/* //example of to use a scrollable caontainer */}
       {/*<div className="w-[150px] min-h-[150px] border-white border bg-white">1</div>
       <div className="w-[150px] min-h-[150px] border-white border">2</div>

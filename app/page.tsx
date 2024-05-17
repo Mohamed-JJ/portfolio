@@ -28,7 +28,7 @@ export default function Home() {
     setWindWidth(width);
   },[width])
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-[82%]">
       {
         winwidth < 640 ? (
         <RootPageMobilc theme={theme!} info={AdminInfo} />

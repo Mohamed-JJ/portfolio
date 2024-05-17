@@ -55,7 +55,7 @@ const RootPageDesktop = ({
 
   return (
     <div
-      className={`sm:pt-40 w-full h-[100%] flex flex-col items-center gap-2 font-mono ${
+      className={`sm:pt-40 w-full min-h-full flex flex-col items-center gap-2 font-mono pb-5 ${
         theme?.dark ? "text-gray-300" : "text-gray-700"
       }`}
     >
@@ -104,30 +104,30 @@ const RootPageDesktop = ({
           </a>
           !
         </p>
-      </div>
-      <div className="w-[40%] flex flex-col">
-        <p
-          className={`${
-            theme?.dark ? "text-gray-300" : "text-gray-700"
-          } font-bold mt-5`}
-        >
-          my Social
-        </p>
-        <div className="w-full flex flex-row gap-5 mt-5">
-          <FaLinkedin
-            onClick={() =>
-              router.push("https://www.linkedin.com/in/mohamed-jarboua/")
-            }
+        <div className="w-[40%] flex flex-col">
+          <p
             className={`${
               theme?.dark ? "text-gray-300" : "text-gray-700"
-            } w-[40px] h-[40px] cursor-pointer`}
-          />
-          <FaGithub
-            onClick={() => router.push("https://github.com/mohamed-JJ")}
-            className={`${
-              theme?.dark ? "text-gray-300" : "text-gray-700"
-            } w-[40px] h-[40px] cursor-pointer`}
-          />
+            } font-bold mt-5`}
+          >
+            my Social
+          </p>
+          <div className="w-full flex flex-row gap-5 mt-5">
+            <FaLinkedin
+              onClick={() =>
+                router.push("https://www.linkedin.com/in/mohamed-jarboua/")
+              }
+              className={`${
+                theme?.dark ? "text-gray-300" : "text-gray-700"
+              } w-[40px] h-[40px] cursor-pointer`}
+            />
+            <FaGithub
+              onClick={() => router.push("https://github.com/mohamed-JJ")}
+              className={`${
+                theme?.dark ? "text-gray-300" : "text-gray-700"
+              } w-[40px] h-[40px] cursor-pointer`}
+            />
+          </div>
         </div>
       </div>
     </div>

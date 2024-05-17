@@ -71,7 +71,7 @@ const NavBar = () => {
   }, [width, height]);
 
   return (
-    <div className={`w-full sm:w-[50%] ${menuExpand ? "h-full" : "h-[18%]"}`}>
+    <div className={`w-full ${menuExpand ? "h-full" : "h-[18%]"}`}>
       {windowWidth > 640 ? (
         <DesktopVersion
           HandleClick={HandleClick}

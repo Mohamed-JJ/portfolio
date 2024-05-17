@@ -24,10 +24,11 @@ export default function RootLayout({
         <QueryComponent>
           <body className={`${inter.className} w-screen h-screen`}>
             <AuroraBackgroundDemo>
-              {/* <div className="h-screen w-full overflow-scroll"> */}
+              <div className="w-full h-full">
+
               <NavBar />
               {children}
-              {/* </div> */}
+              </div>
             </AuroraBackgroundDemo>
           </body>
         </QueryComponent>
