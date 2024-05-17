@@ -55,19 +55,10 @@ const RootPageDesktop = ({
 
   return (
     <div
-      className={`sm:pt-40 w-full h-full flex flex-col items-center gap-2 font-mono ${
+      className={`sm:pt-40 w-full h-[100%] flex flex-col items-center gap-2 font-mono border border-white ${
         theme?.dark ? "text-gray-300" : "text-gray-700"
       }`}
     >
-      {/* <div className="w-[150px] min-h-[150px] border-white border">dgsdghdgyhj</div>
-	  {/* //example of to use a scrollable caontainer */}
-      {/*<div className="w-[150px] min-h-[150px] border-white border bg-white">1</div>
-      <div className="w-[150px] min-h-[150px] border-white border">2</div>
-      <div className="w-[150px] min-h-[150px] border-white border">3</div>
-      <div className="w-[150px] min-h-[150px] border-white border">4</div>
-      <div className="w-[150px] min-h-[150px] border-white border">5</div>
-      <div className="w-[150px] min-h-[150px] border-white border">6</div>
-      <div className="w-[150px] min-h-[150px] border-white border">7</div> */}
       <div className={`text-white w-[40%] flex flex-col gap-7`}>
         <h1 className="font-bold text-4xl" onMouseOver={ChangeStyle}>
           {h1Ref}
@@ -81,14 +72,14 @@ const RootPageDesktop = ({
           crafting immersive digital experiences. with experience in both
           front-end and back-end technologies, with a focus on JavaScript. with
           proficiency in devops architecture and automation, I thrive on
-          transforming ideas into impactful{" "}
+          transforming ideas into impactful
           <a
-            href=""
+            href="#"
             className={`no-underline font-bold ${
               theme?.dark ? "text-gray-300" : "text-gray-700"
             }`}
           >
-            projects
+            {" projects"}
           </a>
           . Dedicated to continuous learning and driving innovation in tech.
           Ready to bring creativity, dedication, and expertise to the table.
@@ -104,7 +95,7 @@ const RootPageDesktop = ({
           articles or swaying to the rhythm of Music, losing myself in
           captivating melodies. Let&apos;s{" "}
           <a
-            href=""
+            href="#"
             className={`no-underline font-bold ${
               theme?.dark ? "text-gray-300" : "text-gray-700"
             }`}

@@ -1,11 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
 import ExpandedMenu from "./ExpandedMenu";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { Theme } from "@/types/theme";
 import Image from "next/image";
 import { IoIosMenu } from "react-icons/io";
-
+import DarkLogo from "@/public/logos/dark-mj-logo.png";
+import LightLogo from "@/public/logos/light-mj-logo.png";
 const MobileVersion = ({
   routes,
   router,
@@ -40,11 +40,7 @@ const MobileVersion = ({
             className="cursor-pointer opacity-50 ml-3"
           >
             <Image
-              src={
-                !theme?.dark
-                  ? "/logos/dark-mj-logo.png"
-                  : "/logos/light-mj-logo.png"
-              }
+              src={!theme!.dark ? DarkLogo : LightLogo}
               alt="logo"
               width={50}
               height={50}

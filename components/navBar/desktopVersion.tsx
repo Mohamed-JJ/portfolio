@@ -1,14 +1,9 @@
 "use client";
-import { ThemeContext } from "@/useContext/context";
-import { useWindowSize } from "@react-hook/window-size";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
-import { useRouter } from "next/navigation";
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
-import { IoIosMenu } from "react-icons/io";
 import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
-import { FaXmark } from "react-icons/fa6";
 import Options from "./options";
 import { AnimatePresence, motion } from "framer-motion";
 import { Theme } from "@/types/theme";

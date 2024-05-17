@@ -4,10 +4,11 @@ import RootPageMobilc from "@/components/rootPage/RootPageMobilc";
 import { ThemeContext } from "@/useContext/context";
 import { useWindowSize } from "@react-hook/window-size";
 import Image from "next/image";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 export default function Home() {
   const theme = useContext(ThemeContext);
+  const [winwidth, setWindWidth] = useState<number>(0);
   const [width, height] = useWindowSize();
   const AdminInfo = {
     name: "Mohamed",
@@ -23,13 +24,18 @@ export default function Home() {
     xApp: "",
     linkedIn: "",
   };
+  useEffect(() => {
+    setWindWidth(width);
+  },[width])
   return (
     <div className="w-full h-full">
-      {width < 640 ? (
+      {
+        winwidth < 640 ? (
         <RootPageMobilc theme={theme!} info={AdminInfo} />
       ) : (
         <RootPageDesktop theme={theme!} info={AdminInfo} />
-      )}
+      )
+      }
     </div>
   );
 }
