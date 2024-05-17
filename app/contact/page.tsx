@@ -2,7 +2,7 @@ import React from 'react'
 
 const Page = () => {
   return (
-	<div>page is still under development</div>
+	<div className='w-full h-full'>page is still under development</div>
   )
 }
 

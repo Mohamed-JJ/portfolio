@@ -32,10 +32,11 @@ const ExpandedMenu = ({
         if (width > 640) setMenuExpand(false);
       });
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [width, height]);
 
   return (
-    <div className="w-full h-full border border-red-700 flex flex-row justify-between px-3 pt-14">
+    <div className="w-full h-full flex flex-row justify-between px-3 pt-14">
       <div className="flex justify-between">
         {theme?.dark ? (
           <MdOutlineLightMode
