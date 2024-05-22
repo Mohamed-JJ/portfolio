@@ -25,9 +25,8 @@ export default function RootLayout({
           <body className={`${inter.className} w-screen h-screen`}>
             <AuroraBackgroundDemo>
               <div className="w-full h-full">
-
-              <NavBar />
-              {children}
+                <NavBar />
+                {children}
               </div>
             </AuroraBackgroundDemo>
           </body>
