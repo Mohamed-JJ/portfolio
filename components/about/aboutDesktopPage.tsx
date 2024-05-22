@@ -10,6 +10,9 @@ import { AnimatePresence, motion } from "framer-motion";
 const AboutDesktopPage = ({ dark }: { dark: boolean }) => {
   const theme = useContext(ThemeContext);
   const router = useRouter();
+  const clickHandler = (router: any, path: string) => {
+    router.push(path);
+  }
   return (
     <AnimatePresence>
       <motion.div
@@ -24,7 +27,7 @@ const AboutDesktopPage = ({ dark }: { dark: boolean }) => {
               <div className="w-full border-gray-500 flex flex-col">
                 <div className="w-full items-center  relative">
                   <div className=" ml-2 pl-[50px] border-l-[1px] flex flex-col gap-5">
-                    <div className="flex gap-3 items-center text-gray-200 hover:text-white transition duration-300 ease-in-out">
+                    <div className="flex gap-3 items-center text-gray-200 hover:text-white transition duration-300 ease-in-out cursor-pointer" onClick={()=>clickHandler(router, "https://github.com/Mohamed-JJ/")}>
                       <p className="text-base">Engineering </p>
                       <FaGithub className="w-[15px] h-[15px]" />
                     </div>
