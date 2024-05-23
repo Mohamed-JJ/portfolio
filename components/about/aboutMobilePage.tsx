@@ -13,7 +13,7 @@ import ParagraphSectionCard from "./paragraphSection/paragraphSectionCard";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500"] });
 
-const AboutDesktopPage = ({
+const AboutMobilePage = ({
   dark,
   AboutMemockData,
   ReadingsMemockData,
@@ -30,7 +30,6 @@ const AboutDesktopPage = ({
     link: string;
   }[];
 }) => {
-
   const theme = useContext(ThemeContext);
   const router = useRouter();
   const clickHandler = (router: AppRouterInstance, path: string) => {
@@ -39,15 +38,15 @@ const AboutDesktopPage = ({
   return (
     <AnimatePresence>
       <motion.div
-        className={`sm:pt-[4%] w-full h-full flex flex-col items-center gap-2 ${
+        className={`sm:pt-[4%] w-full min-h-full flex flex-col items-center gap-2${
           poppins.className
         }  ${theme?.dark ? "text-gray-300" : "text-gray-700"} `}
       >
-        <div className="w-full flex flex-col items-center justify-center h-[100%]">
+        <div className="w-[90%] flex flex-col items-center justify-center h-[100%]">
           <div
             className={` ${
               theme?.dark ? "text-gray-300" : "text-gray-700"
-            } w-[40%] flex flex-col gap-7`}
+            } w-full flex flex-col gap-7`}
           >
             <h1 className="font-bold text-5xl font-mono">About me.</h1>
             <ParagraphSectionCard
@@ -56,7 +55,7 @@ const AboutDesktopPage = ({
               mockData={AboutMemockData}
             />
           </div>
-          <div className={`w-[40%] flex flex-col gap-7 mt-[4%]`}>
+          <div className={`w-[90%] flex flex-col gap-7 mt-[4%]`}>
             <h1 className="font-bold text-5xl font-mono">My Readings.</h1>
             <ParagraphSectionCard
               clickHandler={clickHandler}
@@ -67,10 +66,10 @@ const AboutDesktopPage = ({
             <Socials theme={theme!} />
           </div>
         </div>
-        {/* <div className="w-full flex items-center justify-center  h-[100%]"></div> */}
+        <div className="w-full flex items-center justify-center  h-[100%]"></div>
       </motion.div>
     </AnimatePresence>
   );
 };
 
-export default AboutDesktopPage;
+export default AboutMobilePage;

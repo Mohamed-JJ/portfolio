@@ -6,7 +6,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa6";
 const Socials = ({ theme }: { theme: Theme | null }) => {
   const router = useRouter();
   return (
-    <div className="w-[40%] flex flex-col">
+    <div className="w-[40%] flex flex-col pb-5">
       <p
         className={`${
           theme?.dark ? "text-gray-300" : "text-gray-700"

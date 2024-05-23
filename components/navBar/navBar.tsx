@@ -39,8 +39,8 @@ const NavBar = () => {
       visibility: "viewer",
     },
     {
-      name: "Contact",
-      path: "/contact",
+      name: "resume",
+      path: "/resume",
       visibility: "viewer",
     },
     {
