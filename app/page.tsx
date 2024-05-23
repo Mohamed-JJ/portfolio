@@ -3,8 +3,11 @@ import RootPageDesktop from "@/components/rootPage/RootPageDesktop";
 import RootPageMobilc from "@/components/rootPage/RootPageMobilc";
 import { ThemeContext } from "@/useContext/context";
 import { useWindowSize } from "@react-hook/window-size";
+import { Poppins } from "next/font/google";
 import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
+
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500"] });
 
 export default function Home() {
   const theme = useContext(ThemeContext);
@@ -28,14 +31,12 @@ export default function Home() {
     setWindWidth(width);
   },[width])
   return (
-    <div className="w-full h-[82%]">
-      {
-        winwidth < 640 ? (
+    <div className={`w-full h-[82%] ${poppins.className}`}>
+      {winwidth < 640 ? (
         <RootPageMobilc theme={theme!} info={AdminInfo} />
       ) : (
         <RootPageDesktop theme={theme!} info={AdminInfo} />
-      )
-      }
+      )}
     </div>
   );
 }

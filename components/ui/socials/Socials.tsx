@@ -21,17 +21,17 @@ const Socials = ({ theme }: { theme: Theme | null }) => {
           }
           className={`${
             theme?.dark ? "text-gray-300" : "text-gray-700"
-          } w-[40px] h-[40px] cursor-pointer`}
+          } w-[22px] h-[22px] cursor-pointer`}
         />
         <FaGithub
           onClick={() => router.push("https://github.com/mohamed-JJ")}
           className={`${
             theme?.dark ? "text-gray-300" : "text-gray-700"
-          } w-[40px] h-[40px] cursor-pointer`}
+          } w-[22px] h-[22px] cursor-pointer`}
         />
       </div>
     </div>
   );
 };
 
-export default Socials;
+export default Socials

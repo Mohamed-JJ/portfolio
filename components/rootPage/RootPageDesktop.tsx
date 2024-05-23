@@ -4,6 +4,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import Socials from "../ui/socials/Socials";
+import { Poppins } from "next/font/google";
+const poppins = Poppins({ subsets: ["latin"], weight: ['400', '500']});
 const RootPageDesktop = ({
   theme,
   info,
@@ -56,9 +58,9 @@ const RootPageDesktop = ({
 
   return (
     <div
-      className={`sm:pt-[4%] w-full min-h-full flex flex-col items-center gap-2 font-mono pb-5 ${
-        theme?.dark ? "text-gray-300" : "text-gray-700"
-      }`}
+      className={`sm:pt-[4%] w-full min-h-full flex flex-col items-center gap-2 font-mono pb-5 text-[14px] ${
+        poppins.className
+      } ${theme?.dark ? "text-gray-400" : "text-gray-700"}`}
     >
       <div className={`text-white w-[40%] flex flex-col gap-7`}>
         <h1 className="font-bold text-4xl" onMouseOver={ChangeStyle}>
@@ -67,7 +69,7 @@ const RootPageDesktop = ({
         <p
           className={`${
             theme?.dark ? "text-gray-400" : "text-gray-700"
-          } text-pretty leading-loose`}
+          } text-pretty leading-loose `}
         >
           Passionate Full Stack/DevOps graduate student with a knack for
           crafting immersive digital experiences. with experience in both
