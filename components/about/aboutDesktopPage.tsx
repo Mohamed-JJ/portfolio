@@ -43,7 +43,7 @@ const AboutDesktopPage = ({
           poppins.className
         }  ${theme?.dark ? "text-gray-300" : "text-gray-700"} `}
       >
-        <div className="w-full flex flex-col items-center justify-center h-[100%]">
+        <div className="w-full flex flex-col items-center justify-center ">
           <div
             className={` ${
               theme?.dark ? "text-gray-300" : "text-gray-700"
