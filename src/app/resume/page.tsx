@@ -1,3 +1,5 @@
+"use client";
+
 import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
 import { Highlight } from "@/components/Highlight";
@@ -5,10 +7,24 @@ import { Paragraph } from "@/components/Paragraph";
 import { Products } from "@/components/Products";
 import { WorkHistory } from "@/components/WorkHistory";
 import Image from "next/image";
+import { Badge } from "@/components/Badge";
+// import { saveAs } from "file-saver";
 
 export default function Home() {
+  const loadResume =()=> {
+        const pdfUrl = "/resume/mohamed_jarboua_DevOps_resume.pdf";
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "m.Jarboua.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+  }
   return (
     <Container>
+      <div className="absolute bottom-10 right-5" onClick={()=> {console.log("download resumer"); loadResume()}}>
+        <Badge href="#" text="download Resume" />
+      </div>
       <span className="text-4xl">💼</span>
       <Heading className="font-black">Work History</Heading>
       <Paragraph className="max-w-xl mt-4">
