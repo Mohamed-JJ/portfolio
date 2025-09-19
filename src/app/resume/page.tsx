@@ -11,24 +11,32 @@ import { Badge } from "@/components/Badge";
 // import { saveAs } from "file-saver";
 
 export default function Home() {
-  const loadResume =()=> {
-        const pdfUrl = "/resume/mohamed_jarboua_DevOps_resume.pdf";
-        const link = document.createElement("a");
-        link.href = pdfUrl;
-        link.download = "m.Jarboua.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-  }
+  const loadResume = () => {
+    // path to the actual pdf you want to save in the local machine
+    const pdfUrl = "/resume/mohamed_jarboua_DevOps_resume.pdf";
+    // creates an element in the dom so that it can click it and remove it after it
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "m.Jarboua.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <Container>
-      <div className="absolute bottom-10 right-5" onClick={()=> {console.log("download resumer"); loadResume()}}>
+      <div
+        className="absolute bottom-10 right-5"
+        onClick={() => {
+          console.log("download resumer");
+          loadResume();
+        }}
+      >
         <Badge href="#" text="download Resume" />
       </div>
       <span className="text-4xl">💼</span>
       <Heading className="font-black">Work History</Heading>
       <Paragraph className="max-w-xl mt-4">
-        I&apos;m a full-stack developer that loves{" "}
+        I&apos;m a Software Engineer that loves{" "}
         <Highlight>building products</Highlight> and web apps that can impact
         millions of lives
       </Paragraph>
