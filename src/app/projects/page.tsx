@@ -7,9 +7,9 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Projects | John Doe",
+  title: "Projects | Mohamed J.",
   description:
-    "John Doe is a developer, writer and speaker. He is a digital nomad and travels around the world while working remotely.",
+    "Mohamed J. is a developer, writer and speaker. He is a digital nomad and travels around the world while working remotely.",
 };
 
 export default function Projects() {

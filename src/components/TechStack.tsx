@@ -12,8 +12,32 @@ export const TechStack = () => {
       className: "h-10 w-14",
     },
     {
+      title: "Jenkins",
+      src: "/images/logos/Jenkins_logo.svg.png",
+
+      className: "h-10 w-14",
+    },
+    {
+      title: "Github Actions",
+      src: "/images/logos/GH.png",
+
+      className: "h-10 w-14",
+    },
+    {
+      title: "NestJS",
+      src: "/images/logos/NestJS.svg.png",
+
+      className: "h-10 w-14",
+    },
+    {
       title: "AWS",
       src: "/images/logos/aws.webp",
+
+      className: "h-10 w-10",
+    },
+    {
+      title: "Terraform",
+      src: "/images/logos/terraform.png",
 
       className: "h-10 w-10",
     },
