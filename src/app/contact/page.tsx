@@ -10,7 +10,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Contact | Mohamed J.",
   description:
-    "Mohamed J. is a developer, writer and speaker. He is a digital nomad and travels around the world while working remotely.",
+    "Mohamed J. is a developer and writer. He is a digital nomad and travels around while working remotely.",
 };
 
 export default function Projects() {

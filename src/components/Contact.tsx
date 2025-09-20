@@ -1,25 +1,22 @@
 "use client";
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const defaultFormState = {
-  name: {
-    value: "",
-    error: "",
-  },
-  email: {
-    value: "",
-    error: "",
-  },
-  message: {
-    value: "",
-    error: "",
-  },
+  name: "",
+  email: "",
+  message: "",
 };
 export const Contact = () => {
   const [formData, setFormData] = useState(defaultFormState);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    const service_id = process.env.NEXT_PUBLIC_SERIVCE_ID;
+    const template_id = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+    const key = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+    console.log("service id", service_id);
+    emailjs.send(service_id!, template_id!, formData, key);
     // Write your submit logic here
     console.log(formData);
   };
@@ -30,14 +27,11 @@ export const Contact = () => {
           type="text"
           placeholder="Your Name"
           className="bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 px-2 py-2 rounded-md text-sm text-neutral-700 w-full"
-          value={formData.name.value}
+          value={formData.name}
           onChange={(e) => {
             setFormData({
               ...formData,
-              name: {
-                value: e.target.value,
-                error: "",
-              },
+              name: e.target.value,
             });
           }}
         />
@@ -45,14 +39,11 @@ export const Contact = () => {
           type="email"
           placeholder="Your email address"
           className="bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 px-2 py-2 rounded-md text-sm text-neutral-700 w-full"
-          value={formData.email.value}
+          value={formData.email}
           onChange={(e) => {
             setFormData({
               ...formData,
-              email: {
-                value: e.target.value,
-                error: "",
-              },
+              email: e.target.value,
             });
           }}
         />
@@ -62,14 +53,11 @@ export const Contact = () => {
           placeholder="Your Message"
           rows={10}
           className="bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 px-2 mt-4 py-2 rounded-md text-sm text-neutral-700 w-full"
-          value={formData.message.value}
+          value={formData.message}
           onChange={(e) => {
             setFormData({
               ...formData,
-              message: {
-                value: e.target.value,
-                error: "",
-              },
+              message: e.target.value,
             });
           }}
         />
