@@ -23,9 +23,21 @@ export default function Home() {
     document.body.removeChild(link);
   };
   return (
-    <Container>
+    <div>
+      <div className="pb-32">
+        <Container>
+          <span className="text-4xl">💼</span>
+          <Heading className="font-black">Work History</Heading>
+          <Paragraph className="max-w-xl mt-4">
+            I&apos;m a Software Engineer that loves{" "}
+            <Highlight>building products</Highlight> and web apps that can impact
+            millions of lives
+          </Paragraph>
+          <WorkHistory />
+        </Container>
+      </div>
       <div
-        className="absolute bottom-10 right-5"
+        className="fixed bottom-3 right-14 sm:bottom-10 md:right-10 z-[100]"
         onClick={() => {
           console.log("download resumer");
           loadResume();
@@ -33,14 +45,6 @@ export default function Home() {
       >
         <Badge href="#" text="download Resume" />
       </div>
-      <span className="text-4xl">💼</span>
-      <Heading className="font-black">Work History</Heading>
-      <Paragraph className="max-w-xl mt-4">
-        I&apos;m a Software Engineer that loves{" "}
-        <Highlight>building products</Highlight> and web apps that can impact
-        millions of lives
-      </Paragraph>
-      <WorkHistory />
-    </Container>
+    </div>
   );
 }
