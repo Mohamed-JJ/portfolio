@@ -26,7 +26,7 @@ export const Contact = () => {
         <input
           type="text"
           placeholder="Your Name"
-          className="bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 px-2 py-2 rounded-md text-sm text-neutral-700 w-full"
+          className="bg-neutral-100 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-neutral-200 dark:focus:ring-gray-500 px-2 py-2 rounded-md text-sm text-neutral-700 dark:text-gray-200 placeholder-neutral-500 dark:placeholder-gray-400 w-full"
           value={formData.name}
           onChange={(e) => {
             setFormData({
@@ -38,7 +38,7 @@ export const Contact = () => {
         <input
           type="email"
           placeholder="Your email address"
-          className="bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 px-2 py-2 rounded-md text-sm text-neutral-700 w-full"
+          className="bg-neutral-100 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-neutral-200 dark:focus:ring-gray-500 px-2 py-2 rounded-md text-sm text-neutral-700 dark:text-gray-200 placeholder-neutral-500 dark:placeholder-gray-400 w-full"
           value={formData.email}
           onChange={(e) => {
             setFormData({
@@ -52,7 +52,7 @@ export const Contact = () => {
         <textarea
           placeholder="Your Message"
           rows={10}
-          className="bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 px-2 mt-4 py-2 rounded-md text-sm text-neutral-700 w-full"
+          className="bg-neutral-100 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-neutral-200 dark:focus:ring-gray-500 px-2 mt-4 py-2 rounded-md text-sm text-neutral-700 dark:text-gray-200 placeholder-neutral-500 dark:placeholder-gray-400 w-full"
           value={formData.message}
           onChange={(e) => {
             setFormData({
@@ -63,7 +63,7 @@ export const Contact = () => {
         />
       </div>
       <button
-        className="w-full px-2 py-2 mt-4 bg-neutral-100 rounded-md font-bold text-neutral-500"
+        className="w-full px-2 py-2 mt-4 bg-neutral-100 dark:bg-gray-700 hover:bg-neutral-200 dark:hover:bg-gray-600 rounded-md font-bold text-neutral-500 dark:text-gray-300 transition-colors duration-200"
         type="submit"
       >
         Submit{" "}

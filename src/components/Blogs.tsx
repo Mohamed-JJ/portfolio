@@ -27,7 +27,7 @@ export const Blogs = ({ blogs }: { blogs: Blog[] }) => {
           <Link
             key={`blog-${blog.title}`}
             href={`/blog/${blog.slug}`}
-            className="relative my-10 block"
+            className="relative my-10 block hover:scale-105 duration-300"
             onMouseEnter={() => setHovered(blog.slug)}
             onMouseLeave={() => setHovered(null)}
           >
@@ -50,7 +50,7 @@ export const Blogs = ({ blogs }: { blogs: Blog[] }) => {
                     scaleX: 0.95,
                     scaleY: 0.95,
                   }}
-                  className="absolute z-0 pointer-events-none bg-gray-50 inset-0 h-full w-full   rounded-md "
+                  className="absolute z-0 pointer-events-none bg-gray-50 dark:bg-gray-800/50 inset-0 h-full w-full   rounded-md "
                 />
               )}
             </AnimatePresence>
@@ -74,7 +74,7 @@ export const Blogs = ({ blogs }: { blogs: Blog[] }) => {
                   {blog.tags?.map((tag, index) => (
                     <span
                       key={`tag-${blog.slug}`}
-                      className="text-xs px-1 py-0.5 text-secondary border border-neutral-200 bg-white rounded-md"
+                      className="text-xs px-1 py-0.5 text-secondary dark:text-gray-300 border border-neutral-200 dark:border-gray-600 bg-white dark:bg-gray-700 rounded-md"
                     >
                       {tag}
                     </span>
