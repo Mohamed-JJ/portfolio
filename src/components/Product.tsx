@@ -35,7 +35,7 @@ export const SingleProduct = ({ product }: { product: Product }) => {
           width="1000"
           className="rounded-md object-contain"
         />
-        <div className="absolute bottom-0 bg-white h-40 w-full [mask-image:linear-gradient(to_bottom,transparent,white)]" />
+        <div className="absolute bottom-0 bg-white dark:bg-gray-800 h-40 w-full [mask-image:linear-gradient(to_bottom,transparent,white)]" />
       </motion.div>
       <div className="flex flex-row justify-center my-8 flex-wrap">
         {product.images.map((image, idx) => (
@@ -48,7 +48,7 @@ export const SingleProduct = ({ product }: { product: Product }) => {
               alt="product thumbnail"
               height="1000"
               width="1000"
-              className="h-14 w-16 md:h-40 md:w-60 object-cover object-top mr-4 mb-r border rounded-lg border-neutral-100"
+              className="h-14 w-16 md:h-40 md:w-60 object-cover object-top mr-4 mb-r border rounded-lg border-neutral-100 dark:border-neutral-700"
             />
           </button>
         ))}
@@ -59,7 +59,7 @@ export const SingleProduct = ({ product }: { product: Product }) => {
           {product.stack?.map((stack: string) => (
             <span
               key={stack}
-              className="text-xs  md:text-xs lg:text-xs bg-gray-50 px-2 py-1 rounded-sm text-secondary"
+              className="text-xs  md:text-xs lg:text-xs bg-gray-50 dark:bg-gray-700 px-2 py-1 rounded-sm text-secondary dark:text-gray-300"
             >
               {stack}
             </span>
@@ -69,7 +69,7 @@ export const SingleProduct = ({ product }: { product: Product }) => {
       <div>
         <Paragraph className="max-w-xl mt-4">{product.description}</Paragraph>
       </div>
-      <div className="prose prose-sm md:prose-base max-w-none text-neutral-600">
+      <div className="prose prose-sm md:prose-base max-w-none text-neutral-600 dark:text-gray-300 dark:prose-invert">
         {product?.content}
       </div>
 
