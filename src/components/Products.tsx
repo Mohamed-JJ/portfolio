@@ -1,18 +1,33 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Heading } from "./Heading";
 import { Product } from "@/types/products";
-import { products } from "@/constants/products";
+import { products, certifications } from "@/constants/products";
 import Link from "next/link";
 import Image from "next/image";
 import { Paragraph } from "./Paragraph";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export const Products = () => {
+  const params = usePathname();
+  const [productsList, setProductsList] = useState<Product[]>([]);
+  const [targetPath, setTargetPath] = useState("projects");
+  useEffect(()=> {
+    console.log("certification -> params:", params);
+    if (params.includes("/certifications")) {
+      setTargetPath('certifications');
+      setProductsList(certifications);
+    } else {
+      setTargetPath('projects');
+      setProductsList(products);
+    }
+  }, [params]);
+
   return (
     <div>
       <div className="grid grid-cols-1  gap-10">
-        {products.map((product: Product, idx: number) => (
+        {productsList.map((product: Product, idx: number) => (
           <motion.div
             key={product.href}
             initial={{
@@ -26,7 +41,7 @@ export const Products = () => {
             transition={{ duration: 0.2, delay: idx * 0.1 }}
           >
             <Link
-              href={product.slug ? `/projects/${product.slug}` : product.href}
+              href={product.slug ? `/${targetPath}/${product.slug}` : product.href}
               key={product.href}
               className="group flex flex-col  md:flex-row space-y-4 md:space-y-0 md:space-x-4 hover:scale-105 rounded-2xl transition duration-200 pt-4"
             >

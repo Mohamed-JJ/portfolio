@@ -1,4 +1,8 @@
-import sidefolioAceternity from "public/images/sidefolio-aceternity-2.png";
+import cert1 from "public/certs/cert-1.png";
+import cert2 from "public/certs/cert-2.png";
+import cert3 from "public/certs/cert-3.png";
+import cert4 from "public/certs/cert-4.png";
+import sidefolioAceternity from "public/images/sidefolio-aceternity.png";
 import sidefolioAceternity2 from "public/images/sidefolio-aceternity-2.png";
 import sidefolioAlgochurn from "public/images/sidefolio-algochurn.png";
 import sidefolioAlgochurn2 from "public/images/sidefolio-algochurn.png";
@@ -137,6 +141,69 @@ export const products = [
     images: [sidefolioTailwindMasterKit, sidefolioTailwindMasterKit2],
     stack: ["Nextjs", "Tailwindcss"],
     slug: "tailwindmasterkit",
+    content: (
+      <div>
+        <p>
+          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
+          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
+          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
+          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
+          non cupidatat duis esse velit ut culpa et.{" "}
+        </p>
+        <p>
+          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
+          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
+          sit aute fugiat incididunt nostrud consequat proident fugiat id.
+          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
+          reprehenderit. Cillum Lorem veniam eu magna exercitation.
+          Reprehenderit adipisicing minim et officia enim et veniam Lorem
+          excepteur velit adipisicing et Lorem magna.
+        </p>{" "}
+      </div>
+    ),
+  },
+];
+
+export const certifications = [
+  {
+    href: "https://aceternity.com",
+    title: "Meta backend developer",
+    description:
+      "A design and development studio that focuses on building quality apps.",
+    thumbnail: cert1,
+    images: [cert1, cert2],
+    stack: ["python", "django", "drf"],
+    slug: "meta-backend",
+    content: (
+      <div>
+        <p>
+          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
+          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
+          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
+          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
+          non cupidatat duis esse velit ut culpa et.{" "}
+        </p>
+        <p>
+          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
+          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
+          sit aute fugiat incididunt nostrud consequat proident fugiat id.
+          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
+          reprehenderit. Cillum Lorem veniam eu magna exercitation.
+          Reprehenderit adipisicing minim et officia enim et veniam Lorem
+          excepteur velit adipisicing et Lorem magna.
+        </p>{" "}
+      </div>
+    ),
+  },
+  {
+    href: "https://algochurn.com",
+    title: "Introduction To DevOps",
+    description:
+      "Practice for technical interviews with hands on coding challenges.",
+    thumbnail: cert3,
+    images: [cert3, cert4],
+    stack: ["Devops", "agile", "CI/CD"],
+    slug: "ibm-devops",
     content: (
       <div>
         <p>
