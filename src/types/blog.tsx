@@ -5,6 +5,7 @@ export type Blog = {
   slug: string;
   image: string;
   tags?: string[];
+  externalLink?: string; // Optional external link to the blog post on another website
   // rest
   [key: string]: any;
 };
