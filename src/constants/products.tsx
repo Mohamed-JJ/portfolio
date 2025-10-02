@@ -2,7 +2,6 @@ import cert1 from "public/certs/cert-1.png";
 import cert2 from "public/certs/cert-2.png";
 import cert3 from "public/certs/cert-3.png";
 import cert4 from "public/certs/cert-4.png";
-import sidefolioAceternity from "public/images/sidefolio-aceternity.png";
 import tetris1 from "public/images/tetris1.png";
 import tetris2 from "public/images/tetris2.png";
 import pong1 from "public/images/pingpong1.png";
@@ -19,13 +18,6 @@ import orchestrator1 from "public/images/orchestrator1.png";
 import orchestrator2 from "public/images/orchestrator2.png";
 import orchestrator3 from "public/images/orchestrator3.png";
 import override2 from "public/images/override2.png";
-import sidefolioAceternity2 from "public/images/sidefolio-aceternity-2.png";
-import sidefolioAlgochurn from "public/images/sidefolio-algochurn.png";
-import sidefolioAlgochurn2 from "public/images/sidefolio-algochurn.png";
-import sidefolioMoonbeam from "public/images/sidefolio-moonbeam.png";
-import sidefolioMoonbeam2 from "public/images/sidefolio-moonbeam-2.png";
-import sidefolioTailwindMasterKit from "public/images/sidefolio-tailwindmasterkit.png";
-import sidefolioTailwindMasterKit2 from "public/images/sidefolio-tailwindmasterkit-2.png";
 
 export const products = [
   {
