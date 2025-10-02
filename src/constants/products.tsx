@@ -3,6 +3,22 @@ import cert2 from "public/certs/cert-2.png";
 import cert3 from "public/certs/cert-3.png";
 import cert4 from "public/certs/cert-4.png";
 import sidefolioAceternity from "public/images/sidefolio-aceternity.png";
+import tetris1 from "public/images/tetris1.png";
+import tetris2 from "public/images/tetris2.png";
+import pong1 from "public/images/pingpong1.png";
+import taqa1 from "public/images/taqa1.png";
+import taqa2 from "public/images/taqa2.png";
+import taqa3 from "public/images/taqa3.png";
+import pong2 from "public/images/pingpong2.png";
+import pong3 from "public/images/pingpong3.png";
+import pong4 from "public/images/pingpong4.png";
+import override1 from "public/images/override1.png";
+import cloud1 from "public/images/cloud1.png";
+import cloud2 from "public/images/cloud2.png";
+import orchestrator1 from "public/images/orchestrator1.png";
+import orchestrator2 from "public/images/orchestrator2.png";
+import orchestrator3 from "public/images/orchestrator3.png";
+import override2 from "public/images/override2.png";
 import sidefolioAceternity2 from "public/images/sidefolio-aceternity-2.png";
 import sidefolioAlgochurn from "public/images/sidefolio-algochurn.png";
 import sidefolioAlgochurn2 from "public/images/sidefolio-algochurn.png";
@@ -13,151 +29,161 @@ import sidefolioTailwindMasterKit2 from "public/images/sidefolio-tailwindmasterk
 
 export const products = [
   {
-    href: "https://aceternity.com",
+    href: "https://github.com/abdelhamidbouazi/red-tetris.git",
     title: "snowtris",
     description:
-      "A design and development studio that focuses on building quality apps.",
-    thumbnail: sidefolioAceternity,
-    images: [sidefolioAceternity, sidefolioAceternity2],
-    stack: ["Nextjs", "Tailwindcss"],
-    slug: "aceternity",
+      "A design and developement of a tetris game website with players being able to play over a network.",
+    thumbnail: tetris2,
+    images: [tetris2, tetris1],
+    stack: ["Nextjs", "Tailwindcss", "NestJs", "postgresql"],
+    slug: "snow-tetris",
     content: (
       <div>
         <p>
-          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
-          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
-          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
-          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
-          non cupidatat duis esse velit ut culpa et.{" "}
+          Everyone knows the game Tetris, and everyone knows JavaScript. All
+          that’s left is to build a Tetris game in JavaScript. Yes, but... My
+          Tetris game will be online and multiplayer. It will allow others to
+          disrupt intergalactic gaming sessions during your late-night study
+          sessions. (There are still some WiFi issues on certain planets.){" "}
         </p>
         <p>
-          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
-          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
-          sit aute fugiat incididunt nostrud consequat proident fugiat id.
-          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
-          reprehenderit. Cillum Lorem veniam eu magna exercitation.
-          Reprehenderit adipisicing minim et officia enim et veniam Lorem
-          excepteur velit adipisicing et Lorem magna.
+          My Tetris leverages cutting-edge JavaScript technologies, which are at
+          the core of a fierce intellectual, industrial, and financial
+          competition between Facebook and Google in their quest for global
+          dominance.
         </p>{" "}
       </div>
     ),
   },
   {
-    href: "https://algochurn.com",
+    href: "https://paddles.arbaoui.me",
     title: "pingpong",
-    description:
-      "Practice for technical interviews with hands on coding challenges.",
-    thumbnail: sidefolioAlgochurn,
-    images: [sidefolioAlgochurn, sidefolioAlgochurn2],
+    description: "PingPong themed Fullstack entertainment application.",
+    thumbnail: pong1,
+    images: [pong1, pong2, pong3, pong4],
     stack: ["Nextjs", "Tailwindcss"],
-    slug: "algochurn",
+    slug: "pong",
     content: (
       <div>
         <p>
-          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
-          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
-          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
-          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
-          non cupidatat duis esse velit ut culpa et.{" "}
+          The pingpong project is the final web development project in the 42
+          curriculum, designed to bring together all the skills students have
+          learned throughout their training. Its main goal is to build a fully
+          functional, secure, and responsive web application of the classic Pong
+          game. Beyond just gameplay, the project requires implementing a range
+          of modern web development concepts such as authentication, real-time
+          communication, user management, multiplayer matchmaking, leaderboards,
+          chat systems, and responsive UI/UX design. This ensures that students
+          not only revisit fundamental programming concepts but also gain
+          hands-on experience with full-stack development in a professional-like
+          environment.{" "}
         </p>
         <p>
-          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
-          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
-          sit aute fugiat incididunt nostrud consequat proident fugiat id.
-          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
-          reprehenderit. Cillum Lorem veniam eu magna exercitation.
-          Reprehenderit adipisicing minim et officia enim et veniam Lorem
-          excepteur velit adipisicing et Lorem magna.
+          One of the most important aspects of ft_transcendence is the focus on
+          integration and deployment. Students must apply DevOps practices such
+          as containerization with Docker, managing environments, and deploying
+          the application in a reliable and scalable way. The project also
+          emphasizes security, requiring the use of techniques like OAuth2 for
+          authentication and encrypted connections to protect user data. By
+          combining front-end, back-end, and DevOps knowledge, ft_transcendence
+          acts as a capstone project that prepares students to face real-world
+          challenges in software engineering.
         </p>{" "}
       </div>
     ),
   },
   {
-    href: "https://gomoonbeam.com",
+    href: "https://github.com/Mohamed-JJ/taqa-product.git",
+    title: "taqathon",
+    description:
+      "Anomaly detection application, powered by nodejs, python, and will.",
+    thumbnail: taqa1,
+    images: [taqa1, taqa2, taqa3],
+    stack: ["reactjs", "Tailwindcss", "Fastapi", "NestJs"],
+    slug: "taqathon",
+    content: (
+      <div>
+        <p>
+          this project aims to detect anomalies in a system after a data
+          collection from the machines after being treated by intermidiate.{" "}
+        </p>
+        <p>
+          the end result was to show the analysis done by the trained model
+          classified by criticality of the anomaly and a status report, a rex
+          system, and an advanced filtering system.
+        </p>{" "}
+      </div>
+    ),
+  },
+  {
+    href: "https://github.com/Mohamed-JJ/42-override.git",
     title: "overRide",
     description:
-      "Never write from scratch again with Moonbeam, your AI first writing tool",
-    thumbnail: sidefolioMoonbeam,
-    images: [sidefolioMoonbeam, sidefolioMoonbeam2],
-    stack: ["Nextjs", "Tailwindcss"],
-    slug: "moonbeam",
+      "CTF like challenges where an attacker has to exploit a vulnarble binary to retrieve the flag",
+    thumbnail: override1,
+    images: [override1, override2],
+    stack: ["low level security", "binary exploit"],
+    slug: "override",
     content: (
       <div>
         <p>
-          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
-          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
-          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
-          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
-          non cupidatat duis esse velit ut culpa et.{" "}
+          As a developer, you might have to work on software that will be used
+          by hundreds of people. You have learned to develop more or less
+          complex programs without taking security into account.{" "}
         </p>
         <p>
-          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
-          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
-          sit aute fugiat incididunt nostrud consequat proident fugiat id.
-          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
-          reprehenderit. Cillum Lorem veniam eu magna exercitation.
-          Reprehenderit adipisicing minim et officia enim et veniam Lorem
-          excepteur velit adipisicing et Lorem magna.
+          With this project, you will quickly realize it’s rather easy to
+          exploit issues that can be very easily avoided. Once you’re through
+          with this project, you will have a clearer understanding of the RAM.
+          And this will really help you design a bugless program
         </p>{" "}
       </div>
     ),
   },
   {
-    href: "https://tailwindmasterkit.com",
+    href: "https://github.com/yassine-khadiri/Inception-of-things.git",
     title: "Orchestrator",
-    description:
-      "A beautiful and comprehensive Tailwind CSS components library for building modern websites and applications.",
-    thumbnail: sidefolioTailwindMasterKit,
-    images: [sidefolioTailwindMasterKit, sidefolioTailwindMasterKit2],
-    stack: ["Nextjs", "Tailwindcss"],
+    description: "System admin project with focus on kubernetes and gitops",
+    thumbnail: orchestrator1,
+    images: [orchestrator1, orchestrator2, orchestrator3],
+    stack: ["k3s", "vagrant", "bash", "gitlab"],
     slug: "tailwindmasterkit",
     content: (
       <div>
         <p>
-          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
-          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
-          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
-          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
-          non cupidatat duis esse velit ut culpa et.{" "}
+          This project aims to deepen our knowledge by making us use K3d and K3s
+          with Vagrant.{" "}
         </p>
         <p>
-          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
-          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
-          sit aute fugiat incididunt nostrud consequat proident fugiat id.
-          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
-          reprehenderit. Cillum Lorem veniam eu magna exercitation.
-          Reprehenderit adipisicing minim et officia enim et veniam Lorem
-          excepteur velit adipisicing et Lorem magna.
+          We learned how to set up a personal virtual machine with Vagrant and
+          the distribution of our choice. Then, we learned how to use K3s and
+          its Ingress. Last but not least, we discovered discover K3d that will
+          simplify our life.
         </p>{" "}
       </div>
     ),
   },
   {
-    href: "https://tailwindmasterkit.com",
+    href: "https://github.com/Mohamed-JJ/42-cloud-1.git",
     title: "Deployment infra",
     description:
       "A beautiful and comprehensive Tailwind CSS components library for building modern websites and applications.",
-    thumbnail: sidefolioTailwindMasterKit,
-    images: [sidefolioTailwindMasterKit, sidefolioTailwindMasterKit2],
+    thumbnail: cloud1,
+    images: [cloud1, cloud2],
     stack: ["Nextjs", "Tailwindcss"],
     slug: "tailwindmasterkit",
     content: (
       <div>
         <p>
-          Sit eiusmod ex mollit sit quis ad deserunt. Sint aliqua aliqua ullamco
-          dolore nulla amet tempor sunt est ipsum. Dolor laborum eiusmod
-          cupidatat consectetur velit ipsum. Deserunt nisi in culpa laboris
-          cupidatat elit velit aute mollit nisi. Officia ad exercitation laboris
-          non cupidatat duis esse velit ut culpa et.{" "}
+          in this project it was required to deploy a wordpress application with
+          all it&apos;s dependencies from the wordpress image, to databace, to
+          an nginx webserver.{" "}
         </p>
         <p>
-          Exercitation pariatur enim occaecat adipisicing nostrud adipisicing
-          Lorem tempor ullamco exercitation quis et dolor sint. Adipisicing sunt
-          sit aute fugiat incididunt nostrud consequat proident fugiat id.
-          Officia aliquip laborum labore eu culpa dolor reprehenderit eu ex enim
-          reprehenderit. Cillum Lorem veniam eu magna exercitation.
-          Reprehenderit adipisicing minim et officia enim et veniam Lorem
-          excepteur velit adipisicing et Lorem magna.
+          the end result would be an automated deployment to a virtual machine
+          with configuring the vm before running the app there, while following
+          the modern standards of using ansible, managing secrets, and infra
+          configuration
         </p>{" "}
       </div>
     ),
