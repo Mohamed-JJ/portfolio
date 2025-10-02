@@ -147,7 +147,7 @@ export const products = [
     thumbnail: orchestrator1,
     images: [orchestrator1, orchestrator2, orchestrator3],
     stack: ["k3s", "vagrant", "bash", "gitlab"],
-    slug: "tailwindmasterkit",
+    slug: "orchestrator",
     content: (
       <div>
         <p>
@@ -171,7 +171,7 @@ export const products = [
     thumbnail: cloud1,
     images: [cloud1, cloud2],
     stack: ["Nextjs", "Tailwindcss"],
-    slug: "tailwindmasterkit",
+    slug: "cloud-1",
     content: (
       <div>
         <p>
