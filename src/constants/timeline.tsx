@@ -45,6 +45,7 @@ export const timeline = [
       "Implemented a recommendation algorithm to suggest friends",
       "Enhanced the news feed algorithm to show more relevant posts",
       "Built a feature for tracking user activity",
+      "overseeing and training interns"
     ],
   },
 
