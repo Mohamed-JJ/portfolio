@@ -14,7 +14,6 @@ export const Products = () => {
   const [productsList, setProductsList] = useState<Product[]>([]);
   const [targetPath, setTargetPath] = useState("projects");
   useEffect(()=> {
-    console.log("certification -> params:", params);
     if (params.includes("/certifications")) {
       setTargetPath('certifications');
       setProductsList(certifications);

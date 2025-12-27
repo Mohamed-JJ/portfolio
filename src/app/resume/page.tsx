@@ -39,7 +39,7 @@ export default function Home() {
       <div
         className="fixed bottom-3 right-14 sm:bottom-10 md:right-10 z-[100]"
         onClick={() => {
-          console.log("download resumer");
+
           loadResume();
         }}
       >
